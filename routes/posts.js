@@ -4,7 +4,7 @@ const PostController = require("../controllers/PostController");
 const { authentication,isAuthor} = require("../middlewares/authentication");
 const { uploadUserPostsImages } = require('../middlewares/multer');
 
-router.post("/", authentication, uploadUserPostsImages.single('image'), PostController.create);
+router.post("/createPost", authentication, uploadUserPostsImages.single('image'), PostController.create);
 router.get("/getAll", PostController.getAll);
 router.get("/id/:_id", PostController.getById);
 router.get("/search/:incidence", PostController.getPostsByName);
